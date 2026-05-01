@@ -1,0 +1,341 @@
+{
+  "source": "https://designwerksonline.com/",
+  "links": [
+    "https://designwerksonline.com/index.html#aboutus",
+    "https://designwerksonline.com/index.html#contact",
+    "https://designwerksonline.com/index.html#home",
+    "https://designwerksonline.com/index.html#products",
+    "https://designwerksonline.com/index.html#services",
+    "https://www.facebook.com/designwerkssouthlake/"
+  ],
+  "assets": [
+    {
+      "file": "bg-u2540-r-fr.png",
+      "source": "https://designwerksonline.com/images/bg-u2540-r-fr.png?crc=55133344"
+    },
+    {
+      "file": "blank.gif",
+      "source": "https://designwerksonline.com/images/blank.gif?crc=4208392903"
+    },
+    {
+      "file": "facebook.png",
+      "source": "https://designwerksonline.com/images/facebook.png?crc=3937578975"
+    },
+    {
+      "file": "hero1-crop-u3117.jpg",
+      "source": "https://designwerksonline.com/images/hero1-crop-u3117.jpg?crc=3997239738"
+    },
+    {
+      "file": "hero1.jpg",
+      "source": "https://designwerksonline.com/images/hero1.jpg?crc=3929369761"
+    },
+    {
+      "file": "hero12.jpg",
+      "source": "https://designwerksonline.com/images/hero12.jpg?crc=107722654"
+    },
+    {
+      "file": "hero2-crop-u3137.jpg",
+      "source": "https://designwerksonline.com/images/hero2-crop-u3137.jpg?crc=187167743"
+    },
+    {
+      "file": "hero2.jpg",
+      "source": "https://designwerksonline.com/images/hero2.jpg?crc=280543258"
+    },
+    {
+      "file": "hero22.jpg",
+      "source": "https://designwerksonline.com/images/hero22.jpg?crc=3925946791"
+    },
+    {
+      "file": "hero3-crop-u3157.jpg",
+      "source": "https://designwerksonline.com/images/hero3-crop-u3157.jpg?crc=452756600"
+    },
+    {
+      "file": "hero3.jpg",
+      "source": "https://designwerksonline.com/images/hero3.jpg?crc=10407430"
+    },
+    {
+      "file": "hero32.jpg",
+      "source": "https://designwerksonline.com/images/hero32.jpg?crc=512319010"
+    },
+    {
+      "file": "img_2111.jpg",
+      "source": "https://designwerksonline.com/images/img_2111.jpg?crc=496030644"
+    },
+    {
+      "file": "img_2111300x225.jpg",
+      "source": "https://designwerksonline.com/images/img_2111300x225.jpg?crc=88247329"
+    },
+    {
+      "file": "img_2164.jpg",
+      "source": "https://designwerksonline.com/images/img_2164.jpg?crc=52663793"
+    },
+    {
+      "file": "img_2164300x225.jpg",
+      "source": "https://designwerksonline.com/images/img_2164300x225.jpg?crc=450982374"
+    },
+    {
+      "file": "img_2165.jpg",
+      "source": "https://designwerksonline.com/images/img_2165.jpg?crc=4122230069"
+    },
+    {
+      "file": "img_2165300x225.jpg",
+      "source": "https://designwerksonline.com/images/img_2165300x225.jpg?crc=496419141"
+    },
+    {
+      "file": "img_2166.jpg",
+      "source": "https://designwerksonline.com/images/img_2166.jpg?crc=375459973"
+    },
+    {
+      "file": "img_2166300x225.jpg",
+      "source": "https://designwerksonline.com/images/img_2166300x225.jpg?crc=227403029"
+    },
+    {
+      "file": "legends-of-southlake.jpg",
+      "source": "https://designwerksonline.com/images/legends-of-southlake.jpg?crc=3932168171"
+    },
+    {
+      "file": "pasted-svg-28553x28.svg",
+      "source": "https://designwerksonline.com/images/pasted-svg-28553x28.svg?crc=297524881"
+    },
+    {
+      "file": "pasted-svg-389737x176.svg",
+      "source": "https://designwerksonline.com/images/pasted-svg-389737x176.svg?crc=505461459"
+    },
+    {
+      "file": "pasted-svg-50885x66.svg",
+      "source": "https://designwerksonline.com/images/pasted-svg-50885x66.svg?crc=193369456"
+    },
+    {
+      "file": "pasted-svg-50885x662.svg",
+      "source": "https://designwerksonline.com/images/pasted-svg-50885x662.svg?crc=161092882"
+    },
+    {
+      "file": "pasted-svg-731691x258.svg",
+      "source": "https://designwerksonline.com/images/pasted-svg-731691x258.svg?crc=3815615893"
+    },
+    {
+      "file": "preview-1.jpg",
+      "source": "https://designwerksonline.com/images/preview-1.jpg?crc=129978417"
+    },
+    {
+      "file": "preview-10.jpg",
+      "source": "https://designwerksonline.com/images/preview-10.jpg?crc=100505062"
+    },
+    {
+      "file": "preview-10300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-10300x225.jpg?crc=372648226"
+    },
+    {
+      "file": "preview-11.jpg",
+      "source": "https://designwerksonline.com/images/preview-11.jpg?crc=733155"
+    },
+    {
+      "file": "preview-11300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-11300x225.jpg?crc=4042385555"
+    },
+    {
+      "file": "preview-12.jpg",
+      "source": "https://designwerksonline.com/images/preview-12.jpg?crc=4269612342"
+    },
+    {
+      "file": "preview-12300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-12300x225.jpg?crc=3896932341"
+    },
+    {
+      "file": "preview-13.jpg",
+      "source": "https://designwerksonline.com/images/preview-13.jpg?crc=322017232"
+    },
+    {
+      "file": "preview-1300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-1300x225.jpg?crc=3779294650"
+    },
+    {
+      "file": "preview-13300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-13300x225.jpg?crc=534355279"
+    },
+    {
+      "file": "preview-14.jpg",
+      "source": "https://designwerksonline.com/images/preview-14.jpg?crc=3963853685"
+    },
+    {
+      "file": "preview-14300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-14300x225.jpg?crc=353179071"
+    },
+    {
+      "file": "preview-15.jpg",
+      "source": "https://designwerksonline.com/images/preview-15.jpg?crc=4227056516"
+    },
+    {
+      "file": "preview-15300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-15300x225.jpg?crc=297012613"
+    },
+    {
+      "file": "preview-16.jpg",
+      "source": "https://designwerksonline.com/images/preview-16.jpg?crc=4277705543"
+    },
+    {
+      "file": "preview-16300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-16300x225.jpg?crc=3989539237"
+    },
+    {
+      "file": "preview-17.jpg",
+      "source": "https://designwerksonline.com/images/preview-17.jpg?crc=4281838840"
+    },
+    {
+      "file": "preview-17300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-17300x225.jpg?crc=339185209"
+    },
+    {
+      "file": "preview-18.jpg",
+      "source": "https://designwerksonline.com/images/preview-18.jpg?crc=3818979581"
+    },
+    {
+      "file": "preview-18300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-18300x225.jpg?crc=3942383209"
+    },
+    {
+      "file": "preview-19.jpg",
+      "source": "https://designwerksonline.com/images/preview-19.jpg?crc=3937399281"
+    },
+    {
+      "file": "preview-19300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-19300x225.jpg?crc=281104734"
+    },
+    {
+      "file": "preview-20.jpg",
+      "source": "https://designwerksonline.com/images/preview-20.jpg?crc=3945261468"
+    },
+    {
+      "file": "preview-20300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-20300x225.jpg?crc=4277714019"
+    },
+    {
+      "file": "preview-21.jpg",
+      "source": "https://designwerksonline.com/images/preview-21.jpg?crc=310832396"
+    },
+    {
+      "file": "preview-21300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-21300x225.jpg?crc=151336883"
+    },
+    {
+      "file": "preview-24.jpg",
+      "source": "https://designwerksonline.com/images/preview-24.jpg?crc=3901098143"
+    },
+    {
+      "file": "preview-24300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-24300x225.jpg?crc=85790665"
+    },
+    {
+      "file": "preview-25.jpg",
+      "source": "https://designwerksonline.com/images/preview-25.jpg?crc=3761041112"
+    },
+    {
+      "file": "preview-25300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-25300x225.jpg?crc=3822484917"
+    },
+    {
+      "file": "preview-26.jpg",
+      "source": "https://designwerksonline.com/images/preview-26.jpg?crc=488707987"
+    },
+    {
+      "file": "preview-26300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-26300x225.jpg?crc=3805395286"
+    },
+    {
+      "file": "preview-29.jpg",
+      "source": "https://designwerksonline.com/images/preview-29.jpg?crc=4175464377"
+    },
+    {
+      "file": "preview-29300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-29300x225.jpg?crc=4206923995"
+    },
+    {
+      "file": "preview-3.jpg",
+      "source": "https://designwerksonline.com/images/preview-3.jpg?crc=3925223792"
+    },
+    {
+      "file": "preview-30.jpg",
+      "source": "https://designwerksonline.com/images/preview-30.jpg?crc=310291913"
+    },
+    {
+      "file": "preview-30300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-30300x225.jpg?crc=235533248"
+    },
+    {
+      "file": "preview-31.jpg",
+      "source": "https://designwerksonline.com/images/preview-31.jpg?crc=433922252"
+    },
+    {
+      "file": "preview-31300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-31300x225.jpg?crc=4200347026"
+    },
+    {
+      "file": "preview-32.jpg",
+      "source": "https://designwerksonline.com/images/preview-32.jpg?crc=432398574"
+    },
+    {
+      "file": "preview-32300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-32300x225.jpg?crc=529572808"
+    },
+    {
+      "file": "preview-33.jpg",
+      "source": "https://designwerksonline.com/images/preview-33.jpg?crc=333860040"
+    },
+    {
+      "file": "preview-3300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-3300x225.jpg?crc=96811080"
+    },
+    {
+      "file": "preview-33300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-33300x225.jpg?crc=389464920"
+    },
+    {
+      "file": "preview-34.jpg",
+      "source": "https://designwerksonline.com/images/preview-34.jpg?crc=4233560306"
+    },
+    {
+      "file": "preview-34300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-34300x225.jpg?crc=3967418792"
+    },
+    {
+      "file": "preview-4.jpg",
+      "source": "https://designwerksonline.com/images/preview-4.jpg?crc=3797232340"
+    },
+    {
+      "file": "preview-4300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-4300x225.jpg?crc=469461783"
+    },
+    {
+      "file": "preview-6.jpg",
+      "source": "https://designwerksonline.com/images/preview-6.jpg?crc=3790473777"
+    },
+    {
+      "file": "preview-6300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-6300x225.jpg?crc=196390577"
+    },
+    {
+      "file": "preview-7.jpg",
+      "source": "https://designwerksonline.com/images/preview-7.jpg?crc=218798325"
+    },
+    {
+      "file": "preview-7300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-7300x225.jpg?crc=4224620157"
+    },
+    {
+      "file": "preview-8.jpg",
+      "source": "https://designwerksonline.com/images/preview-8.jpg?crc=34785422"
+    },
+    {
+      "file": "preview-8300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-8300x225.jpg?crc=27961543"
+    },
+    {
+      "file": "preview-9.jpg",
+      "source": "https://designwerksonline.com/images/preview-9.jpg?crc=469623794"
+    },
+    {
+      "file": "preview-9300x225.jpg",
+      "source": "https://designwerksonline.com/images/preview-9300x225.jpg?crc=3908682924"
+    }
+  ]
+}

@@ -1,82 +1,19 @@
 import Image from "next/image";
+import { ContactForm } from "@/components/contact-form";
+import { getHomeContent } from "@/lib/cms/site-content";
+import type { ContactEmail } from "@/lib/cms/types";
 
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-];
+export const dynamic = "force-dynamic";
 
-const services = [
-  {
-    title: "Graphic Design",
-    description:
-      "Layout support for brochures, business cards, signs, vehicle wraps, banners, and more.",
-  },
-  {
-    title: "Production & Installation",
-    description:
-      "Vehicle wraps, wall graphics, vinyl applications, indoor signage, and outdoor signage installed with care.",
-  },
-  {
-    title: "Pickup & Delivery",
-    description:
-      "Fast local pickup and delivery, with simple mileage-based pricing for Southlake and the surrounding area.",
-  },
-];
+function emailDisplay(email: ContactEmail): string {
+  if (email.label) return email.label;
+  return email.href.replace(/^mailto:/i, "");
+}
 
-const productCards = [
-  {
-    title: "Vehicle Wraps",
-    image: "/assets/preview-29.jpg",
-    alt: "Colorful Royal Rugs vehicle wrap in production",
-  },
-  {
-    title: "Indoor Signage",
-    image: "/assets/hero1.jpg",
-    alt: "Large wall mural installed in a conference room",
-  },
-  {
-    title: "Outdoor Signage",
-    image: "/assets/img_2111.jpg",
-    alt: "Custom Mike's Barber Shop sign",
-  },
-  {
-    title: "Custom Graphics",
-    image: "/assets/hero3.jpg",
-    alt: "Office wall graphics with large typography",
-  },
-];
+export default async function Home() {
+  const content = await getHomeContent();
+  const heroCards = content.products.cards.slice(0, 4);
 
-const galleryImages = [
-  {
-    src: "/assets/hero2.jpg",
-    alt: "Long historical wall graphic installation",
-  },
-  {
-    src: "/assets/preview-15.jpg",
-    alt: "Printed custom sign and graphics project",
-  },
-  {
-    src: "/assets/preview-18.jpg",
-    alt: "Large format printed graphics project",
-  },
-  {
-    src: "/assets/preview-21.jpg",
-    alt: "Installed custom branding graphic",
-  },
-  {
-    src: "/assets/preview-30.jpg",
-    alt: "Commercial graphics production example",
-  },
-  {
-    src: "/assets/img_2166.jpg",
-    alt: "Custom printed sign detail",
-  },
-];
-
-export default function Home() {
   return (
     <main className="min-h-screen bg-stone-950 text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-stone-950/85 backdrop-blur-xl">
@@ -96,7 +33,7 @@ export default function Home() {
             className="hidden items-center gap-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/70 md:flex"
             aria-label="Primary navigation"
           >
-            {navItems.map((item) => (
+            {content.navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -107,10 +44,10 @@ export default function Home() {
             ))}
           </nav>
           <a
-            href="tel:8174219422"
+            href={content.header.phoneHref}
             className="rounded-full border border-sky-400/50 px-4 py-2 text-sm font-bold text-sky-100 transition hover:border-sky-300 hover:bg-sky-400/10"
           >
-            817-421-9422
+            {content.header.phoneDisplay}
           </a>
         </div>
       </header>
@@ -131,35 +68,33 @@ export default function Home() {
         <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 py-20 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="mb-5 text-sm font-bold uppercase tracking-[0.35em] text-sky-300">
-              Serving DFW since 1996
+              {content.hero.kicker}
             </p>
             <h1 className="max-w-4xl text-5xl font-black uppercase tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Large format graphics that turn spaces and vehicles into brands.
+              {content.hero.title}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-stone-200">
-              Design Werks specializes in printing and installing vehicle wraps,
-              indoor signage, outdoor signage, trade show graphics, banners,
-              business cards, brochures, postcards, and custom graphics.
+              {content.hero.subtitle}
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#contact"
                 className="rounded-full bg-sky-400 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.18em] text-stone-950 transition hover:bg-sky-300"
               >
-                Start a Project
+                {content.hero.primaryCtaLabel}
               </a>
               <a
                 href="#products"
                 className="rounded-full border border-white/30 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.18em] text-white transition hover:border-white hover:bg-white/10"
               >
-                View Work
+                {content.hero.secondaryCtaLabel}
               </a>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {productCards.slice(0, 4).map((card, index) => (
+            {heroCards.map((card, index) => (
               <div
-                key={card.title}
+                key={`${card.title}-${index}`}
                 className={`group overflow-hidden rounded-3xl border border-white/10 bg-white/10 shadow-2xl shadow-black/30 ${
                   index === 1 ? "sm:mt-10" : ""
                 }`}
@@ -185,24 +120,16 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-700">
-              About Us
+              {content.about.label}
             </p>
             <h2 className="mt-4 text-4xl font-black uppercase tracking-tight sm:text-5xl">
-              Experience, speed, and craftsmanship under one roof.
+              {content.about.headline}
             </h2>
           </div>
           <div className="grid gap-6 text-lg leading-8 text-stone-700">
-            <p>
-              Design Werks has served the DFW area since 1996. With more than
-              65 years of combined industry experience, the team focuses on
-              large format graphics from concept and design through printing,
-              finishing, and installation.
-            </p>
-            <p>
-              The goal is straightforward: excellent customer service, quality
-              products, and fast turnaround for businesses that need to look
-              sharp in the real world.
-            </p>
+            {content.about.paragraphs.map((paragraph, index) => (
+              <p key={`${index}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -212,19 +139,18 @@ export default function Home() {
           <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-700">
-                Products
+                {content.products.label}
               </p>
               <h2 className="mt-4 text-4xl font-black uppercase tracking-tight sm:text-5xl">
-                Built for walls, windows, fleets, events, and print.
+                {content.products.headline}
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-8 text-stone-700">
-              Vehicle wraps, indoor signage, outdoor signage, trade show
-              graphics, banners, business cards, brochures, postcards, and more.
+              {content.products.blurb}
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {productCards.map((card) => (
+            {content.products.cards.map((card) => (
               <article
                 key={card.title}
                 className="overflow-hidden rounded-3xl bg-white shadow-xl shadow-stone-300/40"
@@ -248,26 +174,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-24 text-stone-950 sm:px-8">
+      <section id="gallery" className="bg-white px-5 py-24 text-stone-950 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-700">
-                Recent Work
+                {content.gallery.label}
               </p>
               <h2 className="mt-4 text-4xl font-black uppercase tracking-tight sm:text-5xl">
-                Real projects from the Design Werks portfolio.
+                {content.gallery.headline}
               </h2>
             </div>
             <a
               href="#contact"
               className="text-sm font-black uppercase tracking-[0.22em] text-sky-700 transition hover:text-sky-900"
             >
-              Request a quote
+              {content.gallery.ctaLabel}
             </a>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryImages.map((image) => (
+            {content.gallery.images.map((image) => (
               <Image
                 key={image.src}
                 src={image.src}
@@ -285,14 +211,13 @@ export default function Home() {
       <section id="services" className="bg-stone-950 px-5 py-24 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-300">
-            Our Services
+            {content.services.label}
           </p>
           <h2 className="mt-4 max-w-4xl text-4xl font-black uppercase tracking-tight text-white sm:text-5xl">
-            From layout to installation, everything is handled with one local
-            team.
+            {content.services.headline}
           </h2>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {services.map((service) => (
+            {content.services.items.map((service) => (
               <article
                 key={service.title}
                 className="rounded-3xl border border-white/10 bg-white/[0.06] p-8"
@@ -308,12 +233,9 @@ export default function Home() {
           </div>
           <div className="mt-8 rounded-3xl border border-sky-300/25 bg-sky-300/10 p-8 text-stone-100">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-200">
-              Delivery
+              {content.services.deliveryTitle}
             </p>
-            <p className="mt-4 text-lg leading-8">
-              1-10 miles: $15 · 11-20 miles: $25 · Over 20 miles: call for
-              pricing.
-            </p>
+            <p className="mt-4 text-lg leading-8">{content.services.deliveryBody}</p>
           </div>
         </div>
       </section>
@@ -322,91 +244,50 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.3em] text-sky-700">
-              Get In Touch
+              {content.contact.label}
             </p>
             <h2 className="mt-4 text-4xl font-black uppercase tracking-tight sm:text-5xl">
-              Ready for graphics that get noticed?
+              {content.contact.headline}
             </h2>
             <div className="mt-8 space-y-5 text-lg leading-8 text-stone-700">
               <p>
-                725 Commerce St, Suite 120
-                <br />
-                Southlake, Texas 76092
+                {content.contact.addressLines.map((line, index) => (
+                  <span key={`${index}-${line}`}>
+                    {index > 0 ? <br /> : null}
+                    {line}
+                  </span>
+                ))}
               </p>
-              <p>
-                <a className="font-bold text-stone-950" href="tel:8174219422">
-                  817-421-9422
-                </a>
-              </p>
-              <p>
-                <a
-                  className="font-bold text-stone-950"
-                  href="mailto:steven@designwerksonline.com"
-                >
-                  steven@designwerksonline.com
-                </a>
-                <br />
-                <a
-                  className="font-bold text-stone-950"
-                  href="mailto:stephanie@designwerksonline.com"
-                >
-                  stephanie@designwerksonline.com
-                </a>
-              </p>
+              {content.contact.phones.map((phone) => (
+                <p key={phone.href}>
+                  <a className="font-bold text-stone-950" href={phone.href}>
+                    {phone.display}
+                  </a>
+                </p>
+              ))}
+              {content.contact.emails.map((email) => (
+                <p key={email.href}>
+                  <a className="font-bold text-stone-950" href={email.href}>
+                    {emailDisplay(email)}
+                  </a>
+                </p>
+              ))}
             </div>
           </div>
-          <form
-            action="mailto:steven@designwerksonline.com"
-            className="rounded-[2rem] bg-stone-100 p-6 shadow-2xl shadow-stone-300/40 sm:p-8"
-          >
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.18em] text-stone-600">
-                Name
-                <input
-                  name="name"
-                  className="rounded-2xl border border-stone-200 bg-white px-4 py-3 text-base font-normal normal-case tracking-normal text-stone-950 outline-none transition focus:border-sky-500"
-                  placeholder="Enter name"
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.18em] text-stone-600">
-                Email
-                <input
-                  name="email"
-                  type="email"
-                  className="rounded-2xl border border-stone-200 bg-white px-4 py-3 text-base font-normal normal-case tracking-normal text-stone-950 outline-none transition focus:border-sky-500"
-                  placeholder="Enter email"
-                />
-              </label>
-            </div>
-            <label className="mt-5 grid gap-2 text-sm font-bold uppercase tracking-[0.18em] text-stone-600">
-              Message
-              <textarea
-                name="message"
-                rows={6}
-                className="rounded-2xl border border-stone-200 bg-white px-4 py-3 text-base font-normal normal-case tracking-normal text-stone-950 outline-none transition focus:border-sky-500"
-                placeholder="Tell us about your project"
-              />
-            </label>
-            <button
-              type="submit"
-              className="mt-6 w-full rounded-full bg-stone-950 px-7 py-4 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-sky-700"
-            >
-              Submit Inquiry
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
       <footer className="bg-stone-950 px-5 py-10 text-stone-400 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm md:flex-row md:items-center md:justify-between">
-          <p>Copyright 2026 Design Werks. Demo site built from public source content.</p>
+          <p>{content.footer.copyright}</p>
           <a
-            href="https://www.facebook.com/designwerkssouthlake/"
+            href={content.footer.facebookUrl}
             target="_blank"
             rel="noreferrer"
             className="font-bold text-white transition hover:text-sky-300"
           >
-            Facebook
+            {content.footer.facebookLabel}
           </a>
         </div>
       </footer>

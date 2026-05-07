@@ -19,7 +19,7 @@ export default async function AdminLoginPage(props: {
       `Something went wrong (${searchParams.error}).`)
     : null;
   return (
-    <div className="flex min-h-screen items-center justify-center bg-stone-950 px-6 py-16 text-white">
+    <div className="htp-admin htp-admin-shell flex min-h-screen items-center justify-center px-6 py-16">
       <LoginForm nextPath={nextPath} serverAlert={serverAlert} />
     </div>
   );

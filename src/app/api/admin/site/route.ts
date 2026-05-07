@@ -30,6 +30,7 @@ export async function PATCH(request: Request) {
     ) as HomeContent;
     await upsertHomeContent(nextContent);
     revalidatePath("/");
+    revalidatePath("/admin", "layout");
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error(err);

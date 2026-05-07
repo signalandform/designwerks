@@ -32,7 +32,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Input too long." }, { status: 400 });
     }
     await insertInquiry({ name, email, message });
-    revalidatePath("/admin");
+    revalidatePath("/admin", "layout");
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error(err);

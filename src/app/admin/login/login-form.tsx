@@ -11,6 +11,9 @@ function resolveNext(path: string | undefined): string {
   return path;
 }
 
+const fieldClass =
+  "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-[#C73A34]/35 focus:ring-offset-0";
+
 export function LoginForm(props: {
   nextPath?: string;
   serverAlert?: string | null;
@@ -44,57 +47,55 @@ export function LoginForm(props: {
   }
 
   return (
-    <div className="w-full max-w-md rounded-[2rem] border border-white/10 bg-white/[0.03] p-10 shadow-2xl shadow-black/40 backdrop-blur">
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-sky-300">
-        Admin
+    <div className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg">
+      <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+        Design Werks Studio
       </p>
-      <h1 className="mt-3 text-3xl font-black uppercase tracking-tight">
-        Sign in
-      </h1>
-      <p className="mt-3 text-sm text-stone-400">
+      <h1 className="mt-2 text-2xl font-bold text-slate-900">Sign in</h1>
+      <p className="mt-2 text-sm text-slate-500">
         Use a Supabase Auth account that has been granted access for this
         deployment&apos;s{" "}
-        <span className="font-semibold text-stone-200">SITE_SLUG</span> in the{" "}
-        <span className="font-semibold text-stone-200">dw_site_admins</span>{" "}
+        <span className="font-medium text-slate-700">SITE_SLUG</span> in the{" "}
+        <span className="font-medium text-slate-700">dw_site_admins</span>{" "}
         table.
       </p>
       {props.serverAlert ? (
-        <p className="mt-5 rounded-2xl border border-amber-400/40 bg-amber-500/10 px-4 py-3 text-sm font-semibold text-amber-100">
+        <p className="mt-5 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
           {props.serverAlert}
         </p>
       ) : null}
       <form className="mt-8 grid gap-5" onSubmit={(e) => void onSubmit(e)}>
-        <label className="grid gap-2 text-xs font-bold uppercase tracking-[0.18em] text-stone-400">
-          Email
+        <label className="grid gap-1">
+          <span className="text-sm font-medium text-slate-700">Email</span>
           <input
             type="email"
             autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="rounded-2xl border border-white/10 bg-stone-950 px-4 py-3 text-sm font-normal normal-case tracking-normal text-white outline-none focus:border-sky-400"
+            className={fieldClass}
             placeholder="you@company.com"
           />
         </label>
-        <label className="grid gap-2 text-xs font-bold uppercase tracking-[0.18em] text-stone-400">
-          Password
+        <label className="grid gap-1">
+          <span className="text-sm font-medium text-slate-700">Password</span>
           <input
             type="password"
             autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="rounded-2xl border border-white/10 bg-stone-950 px-4 py-3 text-sm font-normal normal-case tracking-normal text-white outline-none focus:border-sky-400"
+            className={fieldClass}
             placeholder="Password"
           />
         </label>
         {error ? (
-          <p className="rounded-2xl border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-100">
+          <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-[#C73A34]">
             {error}
           </p>
         ) : null}
         <button
           type="submit"
           disabled={loading || email.trim().length === 0 || password.length === 0}
-          className="rounded-full bg-sky-400 px-6 py-4 text-xs font-black uppercase tracking-[0.2em] text-stone-950 transition hover:bg-sky-300 disabled:opacity-40"
+          className="rounded-lg bg-slate-800 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-slate-700 disabled:opacity-50"
         >
           {loading ? "Signing in…" : "Continue"}
         </button>

@@ -58,6 +58,18 @@ export async function listInquiries(limit = 100): Promise<InquiryRow[]> {
   return data as InquiryRow[];
 }
 
+export async function getInquiryById(id: string): Promise<InquiryRow | null> {
+  const client = getServiceSupabase();
+  if (!client) return null;
+  const { data, error } = await client
+    .from(DW_INQUIRIES)
+    .select("*")
+    .eq("id", id)
+    .maybeSingle();
+  if (error || !data) return null;
+  return data as InquiryRow;
+}
+
 export async function insertInquiry(input: {
   name: string;
   email: string;

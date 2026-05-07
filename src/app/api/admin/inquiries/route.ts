@@ -24,7 +24,7 @@ export async function PATCH(request: Request) {
   }
   try {
     await setInquiryRead(id, read);
-    revalidatePath("/admin");
+    revalidatePath("/admin", "layout");
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error(err);
